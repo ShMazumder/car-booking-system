@@ -1,0 +1,136 @@
+body{
+	background: white !important;
+}
+
+.carsOffer{
+	background: white;
+	margin-top: 40px;
+}
+
+.carInfoHeader h3 a{
+	font-weight: bold;
+	color: black;
+}
+
+.carInfoPrice{
+	text-align: right;
+	margin-top: 10px;
+}
+
+.carInfoPrice h4{
+	font-size: 15px;
+}
+
+.carInfoPrice .priceColor{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.carInfoClass{
+	font-weight: bolder;
+	color: #DE1B1B;
+}
+
+.carInfoAdd{
+	text-align: right;
+	font-weight: bolder;
+	color: #DE1B1B;
+}
+
+.carInfoButton{
+  display: block;
+  width: 100%;
+  width: 50%;
+
+  float: right;
+  margin-top: 15px;
+  padding: 10px;
+
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #DE1B1B;
+	margin-bottom: 40px;
+	position: relative;
+	bottom: 0;
+  margin-bottom: 40px;
+}
+.carInfoButton:hover,
+.carInfoButton:link,
+.carInfoButton:visited,
+.carInfoButton:active{
+  color: white;
+}
+
+.carInfoImage{
+	margin-top: 10px;
+	margin-bottom: 10px;
+  cursor: pointer;
+  transform: scale(1,1);
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+.carInfoImage:hover{
+  transform: scale(1.05,1.07);
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    -webkit-transform: scale(1.05,1.07);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1.05,1.07);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+    position: relative;
+    z-index: 99;
+}
+
+.checkCar{
+  float: right;
+  margin-top: 15px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #DE1B1B;
+	margin-bottom: 40px;
+	width: 98%;
+}
+
+.checkClass{
+	float: right;
+  margin-top: 15px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #DE1B1B;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.checkDisabled{
+	background-color: #E8E8E8;
+	color: #A7A7A7;
+}
+
+.checkClassDisabled{
+	background-color: #E8E8E8;
+	color: #A7A7A7;
+}
+
+.carRow{
+	margin-bottom: 40px;
+}

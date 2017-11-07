@@ -1,0 +1,200 @@
+body{
+	background: white !important;
+}
+
+#trPayment{
+	display: none;
+}
+
+#reservationCont{
+	display: none;
+}
+
+#reservationContError{
+	text-align: center;
+	margin-top: 30px;
+	display: none;
+}
+
+.carsOffer{
+	background: white;
+	margin-top: 40px;
+}
+
+.carInfoHeader h3 a{
+	font-weight: bold;
+	color: black;
+}
+
+.carInfoPrice{
+	text-align: right;
+	margin-top: 10px;
+}
+
+.carInfoPrice h4{
+	font-size: 15px;
+}
+
+.carInfoPrice .priceColor{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.carInfoImage{
+	margin-top: 10px;
+	margin-bottom: 10px;
+  cursor: pointer;
+  transform: scale(1,1);
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+.carInfoImage:hover{
+  transform: scale(1.05,1.07);
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    -webkit-transform: scale(1.05,1.07);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1.05,1.07);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+    position: relative;
+    z-index: 99;
+}
+
+#reservationCont{
+	margin-top: 40px;
+}
+
+#businessForm{
+	display: none;
+}
+
+#ruleFormReservation{
+	text-align: right;
+}
+
+#ruleFormReservation p{
+	margin-right: 30px !important;
+}
+
+.carRow{
+	margin-bottom: 40px;
+}
+
+.rightCol{
+	text-align: left;
+	margin-top: 40px;
+}
+
+.rightCol h1{
+	margin-bottom: 40px;
+	font-weight: bold;
+}
+
+.rightCol h3{
+	font-weight: bolder;
+}
+
+.rightCol .row{
+	text-align: left;
+}
+
+#summaryInfo{
+	margin-top: 30px;
+}
+
+#summaryInfo h1{
+	font-weight: bold;
+}
+
+.price{
+	text-align: right;
+}
+.margin{
+	margin-top: 30px;
+}
+
+#dane_tech tr td:first-child{
+	font-weight: bold;
+}
+#dane_tech tr td:last-child{
+	text-align: right;
+}
+
+#reserveSummary{
+	margin-top: 16px;
+	width: 240px;
+	height: 60px;
+	font-size: 22px;
+	text-align: center;
+	display: block;
+	float: right;
+}
+
+#payButton{
+	margin-top: 16px;
+	width: 240px;
+	height: 60px;
+	font-size: 22px;
+	text-align: center;
+	display: block;
+	float: right;
+}
+
+#dotPayButton{
+	margin-top: 16px;
+	width: 240px;
+	height: 60px;
+	font-size: 22px;
+	text-align: center;
+	display: block;
+	float: right;
+}
+
+#backSummary{
+	display: block;
+	float: left;
+	background: #2B2B2B;
+	font-family: 'Lato',Arial,sans-serif;
+	margin-top: 16px;
+	width: 240px;
+	height: 60px;
+	font-size: 22px;
+	text-align: center;
+}
+
+#fullPrice h2{
+	display: block;
+	text-align: right;
+	font-weight: bold;
+}
+
+.checkbox{
+	padding: 0;
+}
+
+.checkbox input[type="checkbox"]{
+	margin: 0;
+	padding: 0;
+}
+
+.payBut{
+	width: 100% !important;
+}
+
+.small-margin{
+	height: 5px;
+}
+
+#dotpayDiv img{
+	margin: 0 auto;
+	margin-top: 100px;
+}

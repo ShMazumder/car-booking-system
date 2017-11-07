@@ -1,0 +1,76 @@
+body{
+	background: white !important;
+}
+ul.ul_arrow{
+	position: relative;
+  list-style: none;
+	font-size: 17px;
+
+}
+ul.ul_arrow li{
+	margin: 10px;
+  	position: relative;
+}
+ul.ul_arrow li::before {
+	position: relative;
+  	left: -20px;
+	content: "\f101";
+    font-family: FontAwesome;
+    color: red;
+    margin-right: 5px;
+    font-size: 20px;
+	display: inline-block;
+  	position: absolute;
+}
+
+.margin{
+	margin-top: 30px;
+}
+.label_form{
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+#miesiace_najmu_div{
+	position: relative;
+}
+.miesiace_najmu_numbers{
+	position: absolute;
+	top: 90px;
+	font-size: 18px;
+}
+#miesiace_najmu_1{
+	left: 1%;
+}
+#miesiace_najmu_2{
+	left: 13%;
+}
+#miesiace_najmu_3{
+	left: 25%;
+}
+#miesiace_najmu_4{
+	left: 37%;
+}
+#miesiace_najmu_6{
+	left: 49%;
+}
+#miesiace_najmu_8{
+	left: 61%;
+}
+#miesiace_najmu_12{
+	left: 72.5%;
+}
+#miesiace_najmu_18{
+	left: 84.5%;
+}
+#miesiace_najmu_24{
+	left: 96.5%;
+}
+
+.infoRight{
+	font-style: italic;
+	text-align: center !important;
+	display: block;
+	padding-top: 40px;
+}

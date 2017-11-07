@@ -1,0 +1,62 @@
+#reserve{
+	display: block;
+	margin: 0 auto;
+	margin-top: 16px;
+	width: 240px;
+	height: 60px;
+	font-size: 22px;
+}
+
+.margin{
+	margin-top: 30px;
+}
+
+#dane_tech tr td:first-child{
+	font-weight: bold;
+}
+#dane_tech tr td:last-child{
+	text-align: right;
+}
+
+ol li.activeCar{
+	border: 2px solid red !important;
+}
+
+
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    bottom: 0;
+    left: 0;
+    margin-left: 5px;
+    width: 100%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 54px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 100px;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 54px;
+    left: 0;
+    width: 100px;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.9;
+}
+
+ol.carousel-indicators{
+	position: relative;
+	top: -30px;
+}

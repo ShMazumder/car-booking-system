@@ -1,0 +1,222 @@
+@media screen and (max-width: 320px) {
+	#formCont{
+	  top: 10px;
+	  height: 500px;
+	}
+
+	#bannerForm input{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#buttonCheckOffer{
+		width: 100%;
+		margin-top: 5px;
+	}
+
+	#firstCarousel{
+	  height: 100px;
+	}
+
+	.ccform-addon{
+	  width:20%;
+	}
+
+	.ccbtn{
+		width: 100%;
+	}
+
+	#reserveSummary{
+		display: block;
+		margin: 0 auto;
+		float: none;
+	}
+
+	#backSummary{
+		display: block;
+		margin: 0 auto;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		float: none;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+	#formCont{
+	  top: 10px;
+	  height: 500px;
+	}
+
+	#bannerForm input{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#buttonCheckOffer{
+		width: 100%;
+		margin-top: 5px;
+	}
+
+	#firstCarousel{
+	  height: 100px;
+	}
+
+	.ccform-addon{
+	  width:20%;
+	}
+
+	.ccbtn{
+		width: 100%;
+	}
+
+	#reserveSummary{
+		display: block;
+		margin: 0 auto;
+		float: none;
+	}
+
+	#backSummary{
+		display: block;
+		margin: 0 auto;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		float: none;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+	#formCont{
+	  top: 10px;
+	  height: 500px;
+	}
+
+	#bannerForm input{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#buttonCheckOffer{
+		width: 100%;
+		margin-top: 5px;
+	}
+
+	#firstCarousel{
+	  height: 150px;
+	}
+
+	.ccform-addon{
+	  width:20%;
+	}
+
+	.ccbtn{
+		width: 100%;
+	}
+
+	#reserveSummary{
+		display: block;
+		margin: 0 auto;
+		float: none;
+	}
+
+	#backSummary{
+		display: block;
+		margin: 0 auto;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		float: none;
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 767px) {
+	#formCont{
+	  top: 10px;
+	  height: 500px;
+	}
+
+	#bannerForm input{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#buttonCheckOffer{
+		width: 100%;
+		margin-top: 5px;
+	}
+
+	#firstCarousel{
+	  height: 180px;
+	}
+
+	.ccform-addon{
+	  width:20%;
+	}
+
+	.ccbtn{
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.ccform-addon{
+	  width:20%;
+	}
+	nav li a{
+	  font-size: 10px;
+	}
+	#formCont{
+	  top: 10px;
+	  height: 400px;
+	}
+	#firstCarousel{
+		height: 240px;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	.ccform-addon{
+		width:20%;
+	}
+	#firstCarousel{
+		height: 280px;
+	}
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
+	#firstCarousel{
+		height: 360px;
+	}
+}
+
+@media screen and (min-width: 1367px){
+	#formCont{
+	  top: 160px;
+	  height: 600px;
+	}
+
+	#bannerForm{
+		width: 40%;
+		height: 350px;
+		font-size: 18px;
+	}
+
+	#bigInfo{
+		margin-top: 12%;
+	}
+
+	.carSmallItem p{
+		font-size: 20px;
+	}
+
+	.ccform input{
+		font-size: 20px;
+	}
+
+	.ccform textarea{
+		font-size: 20px;
+	}
+
+	#firstCarousel{
+	  height: 360px;
+	}
+
+}
