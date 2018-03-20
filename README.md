@@ -1,17 +1,17 @@
-# Car Rental Project
+# Car Booking System in PHP
 
-http://guides.beanstalkapp.com/version-control/git-on-windows.html
+## **Car Booking System in PHP for PaulaRentCar.**
 
-https://docs.gitlab.com/ee/user/markdown.html
+***Features:***
+ - creating reservation,
+ - online payment,
+ - admin panel
+	 - adding new cars, locations, equipments
+	 - managing cars, locations, reservations and payments
+	 - information about users, drivers and companies
+ 
+***Technologies:***
 
-https://www.gitkraken.com/
-
-# Database
-
-https://serwer1723974.home.pl/sql
-
-23387158_paula
-
-https://repository.genmymodel.com/Bartek892/Car-Rental
-
-Baza danych jest w pliku do importu na serwer lokalny
+ - HTML5, CSS3(SCSS, Bootstrap3)
+ - JavaScript + JQuery
+ - PHP + MySQL
