@@ -12,7 +12,7 @@
 
 <div class='container'>
 	<div class="page-header">
-		<h1>Kontakt</h1>
+		<h1>Contact</h1>
 	</div>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

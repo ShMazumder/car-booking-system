@@ -1,111 +1,117 @@
 <?php
 
-	function createDriver($checkS){
-		require_once("adminPanel/displayInfo.php");
-		$pdo = connectDatabase();
+    function createDriver($checkS)
+    {
+        require_once("adminPanel/displayInfo.php");
+        $pdo = connectDatabase();
 
-		$id_driver = "";
-		$stmt = $pdo->prepare('SELECT id FROM drivers WHERE pesel=:pesel');
-		$stmt->bindValue(':pesel', $_POST['reservationFormPesel'], PDO::PARAM_INT);
-		if($stmt->execute()){
-			for($i = 1; $row = $stmt->fetch(); $i++){
-				$id_driver = $row['id'];
-			}
-		}
+        $id_driver = "";
+        $stmt = $pdo->prepare('SELECT id FROM drivers WHERE pesel=:pesel');
+        $stmt->bindValue(':pesel', $_POST['reservationFormPesel'], PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            for ($i = 1; $row = $stmt->fetch(); $i++) {
+                $id_driver = $row['id'];
+            }
+        }
 
-		$id_comp = NULL;
-		if(isset($_POST['reservationFormBusinessNIP'])){
-			$stmt = $pdo->prepare('SELECT id FROM companies WHERE NIP=:nip');
-			$stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_INT);
-			if($stmt->execute()){
-				for($i = 1; $row = $stmt->fetch(); $i++){
-					$id_comp = $row['id'];
-				}
-			}
-		}
+        $id_comp = null;
+        if (isset($_POST['reservationFormBusinessNIP'])) {
+            $stmt = $pdo->prepare('SELECT id FROM companies WHERE NIP=:nip');
+            $stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                for ($i = 1; $row = $stmt->fetch(); $i++) {
+                    $id_comp = $row['id'];
+                }
+            }
+        }
 
-		if($id_driver != ""){
-			$stmt = $pdo->prepare("UPDATE drivers SET name=:name, id_companies=:id_companies, surname=:surname, pesel=:pesel, ident_card=:ident_card, driving_licence=:driving_licence, address=:address, postcode=:postcode, city=:city, country=:country, phone=:phone, email=:email WHERE id=:id_driver");
-			$stmt->bindValue(':name', $_POST['reservationFormName'], PDO::PARAM_STR);
-			$stmt->bindValue(':id_companies', $id_comp, PDO::PARAM_STR);
-			$stmt->bindValue(':surname', $_POST['reservationFormSurname'], PDO::PARAM_STR);
-			$stmt->bindValue(':pesel', $_POST['reservationFormPesel'], PDO::PARAM_STR);
-			$stmt->bindValue(':ident_card', $_POST['reservationFormIDCard'], PDO::PARAM_STR);
-			$stmt->bindValue(':driving_licence', $_POST['reservationFormDriveLicense'], PDO::PARAM_STR);
-			$stmt->bindValue(':address', $_POST['reservationFormAddress'], PDO::PARAM_STR);
-			$stmt->bindValue(':postcode', $_POST['reservationFormPost'], PDO::PARAM_STR);
-			$stmt->bindValue(':city', $_POST['reservationFormCity'], PDO::PARAM_STR);
-			$stmt->bindValue(':country', $_POST['reservationFormCountry'], PDO::PARAM_STR);
-			$stmt->bindValue(':phone', $_POST['reservationFormTelephone'], PDO::PARAM_STR);
-			$stmt->bindValue(':email', $_POST['reservationFormEmail'], PDO::PARAM_STR);
-			$stmt->bindValue(':id_driver', $id_driver, PDO::PARAM_STR);
-			if($stmt->execute())
-				return true;
-		}else{
-			$stmt = $pdo->prepare("INSERT INTO drivers VALUES (NULL, :id_companies, :name, :surname, :pesel, :ident_card, :driving_licence, :address, :postcode, :city, :country, :phone, :email)");
-			$stmt->bindValue(':id_companies', $id_comp, PDO::PARAM_STR);
-			$stmt->bindValue(':name', $_POST['reservationFormName'], PDO::PARAM_STR);
-			$stmt->bindValue(':surname', $_POST['reservationFormSurname'], PDO::PARAM_STR);
-			$stmt->bindValue(':pesel', $_POST['reservationFormPesel'], PDO::PARAM_STR);
-			$stmt->bindValue(':ident_card', $_POST['reservationFormIDCard'], PDO::PARAM_STR);
-			$stmt->bindValue(':driving_licence', $_POST['reservationFormDriveLicense'], PDO::PARAM_STR);
-			$stmt->bindValue(':address', $_POST['reservationFormAddress'], PDO::PARAM_STR);
-			$stmt->bindValue(':postcode', $_POST['reservationFormPost'], PDO::PARAM_STR);
-			$stmt->bindValue(':city', $_POST['reservationFormCity'], PDO::PARAM_STR);
-			$stmt->bindValue(':country', $_POST['reservationFormCountry'], PDO::PARAM_STR);
-			$stmt->bindValue(':phone', $_POST['reservationFormTelephone'], PDO::PARAM_STR);
-			$stmt->bindValue(':email', $_POST['reservationFormEmail'], PDO::PARAM_STR);
-			if($stmt->execute())
-				return true;
-		}
-	}
+        if ($id_driver != "") {
+            $stmt = $pdo->prepare("UPDATE drivers SET name=:name, id_companies=:id_companies, surname=:surname, pesel=:pesel, ident_card=:ident_card, driving_licence=:driving_licence, address=:address, postcode=:postcode, city=:city, country=:country, phone=:phone, email=:email WHERE id=:id_driver");
+            $stmt->bindValue(':name', $_POST['reservationFormName'], PDO::PARAM_STR);
+            $stmt->bindValue(':id_companies', $id_comp, PDO::PARAM_STR);
+            $stmt->bindValue(':surname', $_POST['reservationFormSurname'], PDO::PARAM_STR);
+            $stmt->bindValue(':pesel', $_POST['reservationFormPesel'], PDO::PARAM_STR);
+            $stmt->bindValue(':ident_card', $_POST['reservationFormIDCard'], PDO::PARAM_STR);
+            $stmt->bindValue(':driving_licence', $_POST['reservationFormDriveLicense'], PDO::PARAM_STR);
+            $stmt->bindValue(':address', $_POST['reservationFormAddress'], PDO::PARAM_STR);
+            $stmt->bindValue(':postcode', $_POST['reservationFormPost'], PDO::PARAM_STR);
+            $stmt->bindValue(':city', $_POST['reservationFormCity'], PDO::PARAM_STR);
+            $stmt->bindValue(':country', $_POST['reservationFormCountry'], PDO::PARAM_STR);
+            $stmt->bindValue(':phone', $_POST['reservationFormTelephone'], PDO::PARAM_STR);
+            $stmt->bindValue(':email', $_POST['reservationFormEmail'], PDO::PARAM_STR);
+            $stmt->bindValue(':id_driver', $id_driver, PDO::PARAM_STR);
+            if ($stmt->execute()) {
+                return true;
+            }
+        } else {
+            $stmt = $pdo->prepare("INSERT INTO drivers VALUES (NULL, :id_companies, :name, :surname, :pesel, :ident_card, :driving_licence, :address, :postcode, :city, :country, :phone, :email)");
+            $stmt->bindValue(':id_companies', $id_comp, PDO::PARAM_STR);
+            $stmt->bindValue(':name', $_POST['reservationFormName'], PDO::PARAM_STR);
+            $stmt->bindValue(':surname', $_POST['reservationFormSurname'], PDO::PARAM_STR);
+            $stmt->bindValue(':pesel', $_POST['reservationFormPesel'], PDO::PARAM_STR);
+            $stmt->bindValue(':ident_card', $_POST['reservationFormIDCard'], PDO::PARAM_STR);
+            $stmt->bindValue(':driving_licence', $_POST['reservationFormDriveLicense'], PDO::PARAM_STR);
+            $stmt->bindValue(':address', $_POST['reservationFormAddress'], PDO::PARAM_STR);
+            $stmt->bindValue(':postcode', $_POST['reservationFormPost'], PDO::PARAM_STR);
+            $stmt->bindValue(':city', $_POST['reservationFormCity'], PDO::PARAM_STR);
+            $stmt->bindValue(':country', $_POST['reservationFormCountry'], PDO::PARAM_STR);
+            $stmt->bindValue(':phone', $_POST['reservationFormTelephone'], PDO::PARAM_STR);
+            $stmt->bindValue(':email', $_POST['reservationFormEmail'], PDO::PARAM_STR);
+            if ($stmt->execute()) {
+                return true;
+            }
+        }
+    }
 
-	function createBusiness(){
-		require_once("adminPanel/displayInfo.php");
-		$pdo = connectDatabase();
-		$id_companies = "";
+    function createBusiness()
+    {
+        require_once("adminPanel/displayInfo.php");
+        $pdo = connectDatabase();
+        $id_companies = "";
 
-		$stmt = $pdo->prepare('SELECT id FROM companies WHERE NIP=:nip');
-		$stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_INT);
-		if($stmt->execute()){
-			for($i = 1; $row = $stmt->fetch(); $i++){
-				$id_companies = $row['id'];
-			}
-		}
+        $stmt = $pdo->prepare('SELECT id FROM companies WHERE NIP=:nip');
+        $stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            for ($i = 1; $row = $stmt->fetch(); $i++) {
+                $id_companies = $row['id'];
+            }
+        }
 
-		if($id_companies != ""){
-			$stmt = $pdo->prepare("UPDATE companies SET name=:name, address=:address, postcode=:postcode, city=:city, NIP=:nip, phone=:phone, email=:email WHERE id=:id_companies");
-			$stmt->bindValue(':name', $_POST['reservationFormBusinessName'], PDO::PARAM_STR);
-			$stmt->bindValue(':address', $_POST['reservationFormBusinessAddress'], PDO::PARAM_STR);
-			$stmt->bindValue(':postcode', $_POST['reservationFormBusinessPost'], PDO::PARAM_STR);
-			$stmt->bindValue(':city', $_POST['reservationFormBusinessCity'], PDO::PARAM_STR);
-			$stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_STR);
-			$stmt->bindValue(':phone', $_POST['reservationFormBusinessTelephone'], PDO::PARAM_STR);
-			$stmt->bindValue(':email', $_POST['reservationFormBusinessEmail'], PDO::PARAM_STR);
-			$stmt->bindValue(':id_companies', $id_companies, PDO::PARAM_STR);
-			if($stmt->execute())
-				return true;
+        if ($id_companies != "") {
+            $stmt = $pdo->prepare("UPDATE companies SET name=:name, address=:address, postcode=:postcode, city=:city, NIP=:nip, phone=:phone, email=:email WHERE id=:id_companies");
+            $stmt->bindValue(':name', $_POST['reservationFormBusinessName'], PDO::PARAM_STR);
+            $stmt->bindValue(':address', $_POST['reservationFormBusinessAddress'], PDO::PARAM_STR);
+            $stmt->bindValue(':postcode', $_POST['reservationFormBusinessPost'], PDO::PARAM_STR);
+            $stmt->bindValue(':city', $_POST['reservationFormBusinessCity'], PDO::PARAM_STR);
+            $stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_STR);
+            $stmt->bindValue(':phone', $_POST['reservationFormBusinessTelephone'], PDO::PARAM_STR);
+            $stmt->bindValue(':email', $_POST['reservationFormBusinessEmail'], PDO::PARAM_STR);
+            $stmt->bindValue(':id_companies', $id_companies, PDO::PARAM_STR);
+            if ($stmt->execute()) {
+                return true;
+            }
+        } else {
+            $stmt = $pdo->prepare("INSERT INTO companies VALUES (NULL, :name, :address, :postcode, :city, :nip, :phone, :email)");
+            $stmt->bindValue(':name', $_POST['reservationFormBusinessName'], PDO::PARAM_STR);
+            $stmt->bindValue(':address', $_POST['reservationFormBusinessAddress'], PDO::PARAM_STR);
+            $stmt->bindValue(':postcode', $_POST['reservationFormBusinessPost'], PDO::PARAM_STR);
+            $stmt->bindValue(':city', $_POST['reservationFormBusinessCity'], PDO::PARAM_STR);
+            $stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_STR);
+            $stmt->bindValue(':phone', $_POST['reservationFormBusinessTelephone'], PDO::PARAM_STR);
+            $stmt->bindValue(':email', $_POST['reservationFormBusinessEmail'], PDO::PARAM_STR);
+            if ($stmt->execute()) {
+                return true;
+            }
+        }
+    }
 
-		}else{
-			$stmt = $pdo->prepare("INSERT INTO companies VALUES (NULL, :name, :address, :postcode, :city, :nip, :phone, :email)");
-			$stmt->bindValue(':name', $_POST['reservationFormBusinessName'], PDO::PARAM_STR);
-			$stmt->bindValue(':address', $_POST['reservationFormBusinessAddress'], PDO::PARAM_STR);
-			$stmt->bindValue(':postcode', $_POST['reservationFormBusinessPost'], PDO::PARAM_STR);
-			$stmt->bindValue(':city', $_POST['reservationFormBusinessCity'], PDO::PARAM_STR);
-			$stmt->bindValue(':nip', $_POST['reservationFormBusinessNIP'], PDO::PARAM_STR);
-			$stmt->bindValue(':phone', $_POST['reservationFormBusinessTelephone'], PDO::PARAM_STR);
-			$stmt->bindValue(':email', $_POST['reservationFormBusinessEmail'], PDO::PARAM_STR);
-			if($stmt->execute())
-				return true;
-		}
-	}
+    function displaySite()
+    {
+        include("header.php");
+        getHeader("Car rental - Payment", "mainCss.css;reservationSummary.css");
+        include("menu.php");
 
-	function displaySite(){
-		include("header.php");
-		getHeader("Wypożyczalnia samochodów - Płatność", "mainCss.css;reservationSummary.css");
-		include("menu.php");
-
-		echo "
+        echo "
 		<div id='reservationContError' class='container'>
 			<div class='row'>
 				<div class='col-md-12'>
@@ -125,10 +131,10 @@
 			</div>
 
 				<div class='row'>
-					<h1>Informacje o rezerwacji:</h1><br>
+					<h1>Booking information:</h1><br>
 					<div class='col-md-12' style='text-align: center'>
 						<div class='col-md-6'>
-							<h4><strong>Odbiór:</strong> <span id='receptionPlaceReservation'></span></h4>
+							<h4><strong>Reception:</strong> <span id='receptionPlaceReservation'></span></h4>
 						</div>
 						<div class='col-md-6'>
 							<h4><strong>Data:</strong> <span id='receptionDateReservation'></span>  <span id='receptionTimeReservation'></span></h4>
@@ -137,7 +143,7 @@
 
 					<div class='col-md-12' style='text-align: center'>
 						<div class='col-md-6'>
-							<h4><strong>Zwrot:</strong> <span id='returnPlaceReservation'></span></h4>
+							<h4><strong>Return:</strong> <span id='returnPlaceReservation'></span></h4>
 						</div>
 						<div class='col-md-6'>
 							<h4><strong>Data:</strong> <span id='returnDateReservation'></span>  <span id='returnTimeReservation'></span></h4>
@@ -158,39 +164,38 @@
 						</div>
 					</div>
 					<div id='fullPrice' class='row'>
-						<h2>Koszt całkowity: </h2>
+						<h2>Total cost: </h2>
 						<h3 class='price' id='lastPriceReservation'></h3>
 					</div>
 				</div>";
 
 
-				if($_POST['typeForm'] == "private"){
-					echo "
+        if ($_POST['typeForm'] == "private") {
+            echo "
 						<div class='col-md-offset-1 col-lg-offset-1 col-lg-5 col-md-5 col-sm-12 col-xs-12'>
-							<h3><i class='fa fa-table' aria-hidden='true'></i> Dane zamawiającego: </h3>
-							<br><p id='identTypeClient' type-client='1'><strong>Rodzaj: </strong><span>Osoba Prywatna</span></p>
-							<p><strong>Imię i nazwisko: </strong><span>".$_POST['reservationFormName']." ".$_POST['reservationFormSurname']."</span></p>
-							<p><strong>Numer Pesel: </strong> <span id='peselNumberGet'>".$_POST['reservationFormPesel']."</span></p>
-							<p><strong>Numer i seria dowodu osobistego: </strong> <span>".$_POST['reservationFormIDCard']."</span></p>
-							<p><strong>Numer prawa jazdy: </strong> <span>".$_POST['reservationFormDriveLicense']."</span></p>
-							<p><strong>Adres: </strong> <span>".$_POST['reservationFormAddress']."</span></p>
-							<p><strong>Poczta: </strong> <span>".$_POST['reservationFormPost']." ".$_POST['reservationFormCity']."</span></p>
-							<p><strong>Kraj: </strong> <span>".$_POST['reservationFormCountry']."</span></p>
-							<p><strong>Telefon: </strong> <span>".$_POST['reservationFormTelephone']."</span></p>
-							<p><strong>Adres e-mail: </strong> <span id='emailAddress'>".$_POST['reservationFormEmail']."</span></p><br>
+							<h3><i class='fa fa-table' aria-hidden='true'></i> Ordering party's data: </h3>
+							<br><p id='identTypeClient' type-client='1'><strong>Type: </strong><span>Private person</span></p>
+							<p><strong>First name and last name: </strong><span>".$_POST['reservationFormName']." ".$_POST['reservationFormSurname']."</span></p>
+							<p><strong>Pesel number: </strong> <span id='peselNumberGet'>".$_POST['reservationFormPesel']."</span></p>
+							<p><strong>ID number and series: </strong> <span>".$_POST['reservationFormIDCard']."</span></p>
+							<p><strong>Driver's license number: </strong> <span>".$_POST['reservationFormDriveLicense']."</span></p>
+							<p><strong>Address: </strong> <span>".$_POST['reservationFormAddress']."</span></p>
+							<p><strong>Post Office: </strong> <span>".$_POST['reservationFormPost']." ".$_POST['reservationFormCity']."</span></p>
+							<p><strong>Region: </strong> <span>".$_POST['reservationFormCountry']."</span></p>
+							<p><strong>Telephone: </strong> <span>".$_POST['reservationFormTelephone']."</span></p>
+							<p><strong>Email: </strong> <span id='emailAddress'>".$_POST['reservationFormEmail']."</span></p><br>
 							<br><br>
 						</div>
 
 						<div class='col-lg-12 col-md-12' id='dotpayDiv'>
-							<input type='button' value='Opłać Rezerwację!' class='price ccbtn payBut' id='dotPayButton'/>
+							<input type='button' value='Pay for the booking!' class='price ccbtn payBut' id='dotPayButton'/>
 							<br><br>
 							<img src='images/dotpay.png' alt='' class='img-responsive'>
 						</div>
 					</div>
 				</div>";
-
-				}else if($_POST['typeForm'] == "business"){
-					echo "
+        } elseif ($_POST['typeForm'] == "business") {
+            echo "
 					<div class='col-md-offset-1 col-lg-offset-1 col-lg-5 col-md-5 col-sm-12 col-xs-12'>
 						<h3><i class='fa fa-table' aria-hidden='true'></i> Dane zamawiającego: </h3>
 						<br><p id='identTypeClient' type-client='2' ><strong><span>Rodzaj: </strong>Firma</span></p>
@@ -216,28 +221,28 @@
 					</div>
 
 					<div class='col-lg-12 col-md-12' id='dotpayDiv'>
-						<input type='button' value='Opłać Rezerwację!' class='price ccbtn payBut' id='dotPayButton'/>
+						<input type='button' value='Pay for the booking!' class='price ccbtn payBut' id='dotPayButton'/>
 						<br><br>
 						<img src='images/dotpay.png' alt='' class='img-responsive'>
 					</div>
 				</div>
 			</div>";
-				}
+        }
 
 
-		include("footer.php");
-	}
+        include("footer.php");
+    }
 
-	if(isset($_POST)){
-		if($_POST['typeForm'] == "private"){
-			if(createDriver(0))
-					displaySite();
-		}else if($_POST['typeForm'] == "business"){
-			if(createBusiness()){
-				if(createDriver(1))
-						displaySite();
-			}
-		}
-	}
-
-?>
+    if (isset($_POST)) {
+        if ($_POST['typeForm'] == "private") {
+            if (createDriver(0)) {
+                displaySite();
+            }
+        } elseif ($_POST['typeForm'] == "business") {
+            if (createBusiness()) {
+                if (createDriver(1)) {
+                    displaySite();
+                }
+            }
+        }
+    }

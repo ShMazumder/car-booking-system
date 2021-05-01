@@ -1,15 +1,15 @@
   <?php
     include("header.php");
-    getHeader("Wypożyczalnia Luksusowych Samochodów", "mainCss.css");
+    getHeader("Luxury Car Rental", "mainCss.css");
     require("adminPanel/displayInfo.php");
     include("menu.php");
-    if(isset($_GET['status'])){
-      if($_GET['status'] == "OK"){
-        echo '
+    if (isset($_GET['status'])) {
+        if ($_GET['status'] == "OK") {
+            echo '
         <script>
         swal({
-            title: "Transakcja przebiegła pomyślnie!",
-            text: "Rezerwacja została opłacona.",
+            title: "The transaction was successful!",
+            text: "The reservation has been paid for.",
             type: "success",
             confirmButtonColor: "#3085d6",
             confirmButtonText: "OK!"
@@ -17,7 +17,7 @@
             window.location.href = "index.php";
           })
         </script>';
-      }
+        }
     }
     include("body.php");
     include("footer.php");

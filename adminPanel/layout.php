@@ -22,7 +22,7 @@
 									echo '<i class="fa fa-pencil-square-o fa-lg"></i> Rezerwacje';
 									break;
 								case "Cars":
-									echo '<i class="fa fa-car fa-lg"></i> Flota';
+									echo '<i class="fa fa-car fa-lg"></i> Fleet';
 									break;
 								case "Payments":
 									echo '<i class="fa fa-credit-card"></i> Płatności';
@@ -62,7 +62,7 @@
 							<a href="adminPanel.php?subpage=Reservations"><i class="fa fa-pencil-square-o fa-lg"></i> Rezerwacje</a>
 						</li>
 						<li<?php if(isset($_GET['subpage']) && $_GET['subpage'] == "Cars") echo ' class="active"';?> class="collapsed">
-							<a href="adminPanel.php?subpage=Cars"><i class="fa fa-car fa-lg"></i> Flota</a>
+							<a href="adminPanel.php?subpage=Cars"><i class="fa fa-car fa-lg"></i> Fleet</a>
 						</li>
 						<li<?php if(isset($_GET['subpage']) && $_GET['subpage'] == "Payments") echo ' class="active"';?> class="collapsed">
 							<a href="adminPanel.php?subpage=Payments"><i class="fa fa-credit-card" aria-hidden="true"></i> Płatności</a>

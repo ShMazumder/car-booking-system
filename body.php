@@ -1,7 +1,7 @@
 <?php
-	if(isset($_GET['type'])){
-		displayFormInfo($_GET['type']);
-	}
+    if (isset($_GET['type'])) {
+        displayFormInfo($_GET['type']);
+    }
 ?>
 
 <div id="frontBanner" class="container-fluid">
@@ -9,7 +9,7 @@
 		<img src="images/bannerCar.jpg" alt="Wypożyczalnia samochodów - Baner" class="img-responsive hidden-sm hidden-xs">
 		<div id="formCont" class="col-md-12">
 			<div id="bannerForm" class="col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 col-sm-offset-0">
-				<h3>Sprawdź dostępne samochody:</h3>
+				<h3>Check available cars:</h3>
 				<div class="row">
 					<div class="col-md-6 col-xs-12 col-xs-12 col-sm-6">
 						Odbiór:
@@ -58,10 +58,10 @@
 			</div>
 
 			<div class="col-md-6 hidden-xs hidden-sm" id="bigInfo">
-				<h2>Zarezerwuj samochód u nas!</h2>
-				<h3><i class="fa fa-car" aria-hidden="true"></i> Zapoznaj się z naszą ofertą.</h3>
-				<h3><i class="fa fa-calendar-o" aria-hidden="true"></i> Wybierz dogodny termin.</h3>
-				<h3><i class="fa fa-handshake-o" aria-hidden="true"></i> Odbierz samochód w wybranej lokalizacji.</h3>
+				<h2>Book a car with us!</h2>
+				<h3><i class="fa fa-car" aria-hidden="true"></i> See our offer.</h3>
+				<h3><i class="fa fa-calendar-o" aria-hidden="true"></i> Choose a convenient date.</h3>
+				<h3><i class="fa fa-handshake-o" aria-hidden="true"></i> Pick up the car at the selected location.</h3>
 			</div>
 		</div>
 	</div>
@@ -70,7 +70,7 @@
 <div class="container-fluid carouselCars hidden-xs">
 	<div class="row">
 
-		<h2>Wybrane modele samochodów: </h2>
+		<h2>Selected car models: </h2>
 
 		<div id="firstCarousel" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators hidden-xs">
@@ -98,8 +98,8 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12 wrapper">
 				<header class="ccheader">
-						<h1>Stontaktuj się z nami!</h1>
-						<h3>Wypełnij formularz kontaktowy</h3>
+						<h1>Contact us!</h1>
+						<h3>Fill out the contact form</h3>
 				</header>
 		    <form method="post" action="adminPanel/sendMessage.php?type=home" class="ccform">
 			    <div class="ccfield-prepend col-md-offset-3 col-md-6">

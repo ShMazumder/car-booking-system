@@ -10,7 +10,7 @@
 	if(!isset($_GET['action']))
 	{
 		echo '<div class="page-header">
-			<h3>Flota</h3>
+			<h3>Fleet</h3>
 			</div>';
 		echo '<a href="adminPanel.php?subpage=Cars&action=add" class="btn btn-default action-btn">Dodaj samochód</a>
 			<hr/>';

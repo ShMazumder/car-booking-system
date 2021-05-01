@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `additional_fees` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_polish_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_general_ci NOT NULL,
   `price` double(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `additional_fees`
@@ -54,7 +54,7 @@ CREATE TABLE `additional_reservation` (
   `id` int(11) NOT NULL,
   `additional_id` int(11) NOT NULL,
   `reservation_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `additional_reservation`
@@ -72,8 +72,8 @@ INSERT INTO `additional_reservation` (`id`, `additional_id`, `reservation_id`) V
 
 CREATE TABLE `body_type` (
   `id` int(11) NOT NULL,
-  `name` varchar(30) COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `name` varchar(30) COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `body_type`
@@ -94,18 +94,18 @@ INSERT INTO `body_type` (`id`, `name`) VALUES
 
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `manufacture_year` varchar(4) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `varnish_color` varchar(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `manufacture_year` varchar(4) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `varnish_color` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `nr_of_seats` int(11) NOT NULL,
-  `engine` varchar(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `engine_power` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `engine` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `engine_power` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `drive` varchar(10) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
-  `gear_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `body_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `mileage` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `description` varchar(2000) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `gear_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `body_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `mileage` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_localization` int(11) NOT NULL,
   `price_class` int(11) NOT NULL,
   `avaliable` tinyint(1) NOT NULL
@@ -134,12 +134,12 @@ INSERT INTO `cars` (`id`, `name`, `type`, `manufacture_year`, `varnish_color`, `
 
 CREATE TABLE `companies` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `postcode` varchar(50) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `postcode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `city` varchar(40) NOT NULL,
-  `NIP` varchar(13) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `NIP` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin2;
 
@@ -152,11 +152,11 @@ CREATE TABLE `companies` (
 CREATE TABLE `drivers` (
   `id` int(11) NOT NULL,
   `id_companies` int(11) DEFAULT NULL,
-  `name` varchar(60) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `surname` varchar(60) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `name` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `surname` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `pesel` varchar(11) NOT NULL,
-  `ident_card` varchar(9) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `driving_licence` varchar(13) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `ident_card` varchar(9) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `driving_licence` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `address` varchar(100) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   `postcode` varchar(20) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   `city` varchar(40) NOT NULL,
@@ -180,13 +180,13 @@ INSERT INTO `drivers` (`id`, `id_companies`, `name`, `surname`, `pesel`, `ident_
 
 CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
-  `name` varchar(60) COLLATE utf8_polish_ci NOT NULL,
-  `surname` varchar(60) COLLATE utf8_polish_ci NOT NULL,
-  `login` varchar(50) COLLATE utf8_polish_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_polish_ci NOT NULL,
+  `name` varchar(60) COLLATE utf8_general_ci NOT NULL,
+  `surname` varchar(60) COLLATE utf8_general_ci NOT NULL,
+  `login` varchar(50) COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_general_ci NOT NULL,
   `last_login` datetime DEFAULT NULL,
-  `permissions` varchar(20) COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `permissions` varchar(20) COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `employees`
@@ -205,8 +205,8 @@ CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `nr_img` int(11) NOT NULL,
   `id_car` int(11) NOT NULL,
-  `extension` varchar(6) COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `extension` varchar(6) COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `images`
@@ -249,12 +249,12 @@ INSERT INTO `images` (`id`, `nr_img`, `id_car`, `extension`) VALUES
 
 CREATE TABLE `localizations` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_polish_ci NOT NULL,
-  `address` varchar(100) COLLATE utf8_polish_ci NOT NULL,
-  `city` varchar(60) COLLATE utf8_polish_ci NOT NULL,
-  `postcode` varchar(20) COLLATE utf8_polish_ci NOT NULL,
-  `type` varchar(50) COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `name` varchar(100) COLLATE utf8_general_ci NOT NULL,
+  `address` varchar(100) COLLATE utf8_general_ci NOT NULL,
+  `city` varchar(60) COLLATE utf8_general_ci NOT NULL,
+  `postcode` varchar(20) COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(50) COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `localizations`
@@ -271,23 +271,23 @@ INSERT INTO `localizations` (`id`, `name`, `address`, `city`, `postcode`, `type`
 
 CREATE TABLE `payments` (
   `id` int(11) NOT NULL,
-  `nr_reservation` varchar(25) COLLATE utf8_polish_ci NOT NULL,
-  `operation_number` varchar(45) COLLATE utf8_polish_ci NOT NULL,
-  `operation_type` varchar(45) COLLATE utf8_polish_ci NOT NULL,
-  `operation_status` varchar(45) COLLATE utf8_polish_ci NOT NULL,
-  `operation_amount` varchar(10) COLLATE utf8_polish_ci NOT NULL,
-  `operation_currency` varchar(10) COLLATE utf8_polish_ci NOT NULL,
-  `operation_original_amount` varchar(10) COLLATE utf8_polish_ci NOT NULL,
-  `operation_original_currency` varchar(10) COLLATE utf8_polish_ci NOT NULL,
+  `nr_reservation` varchar(25) COLLATE utf8_general_ci NOT NULL,
+  `operation_number` varchar(45) COLLATE utf8_general_ci NOT NULL,
+  `operation_type` varchar(45) COLLATE utf8_general_ci NOT NULL,
+  `operation_status` varchar(45) COLLATE utf8_general_ci NOT NULL,
+  `operation_amount` varchar(10) COLLATE utf8_general_ci NOT NULL,
+  `operation_currency` varchar(10) COLLATE utf8_general_ci NOT NULL,
+  `operation_original_amount` varchar(10) COLLATE utf8_general_ci NOT NULL,
+  `operation_original_currency` varchar(10) COLLATE utf8_general_ci NOT NULL,
   `operation_datetime` datetime NOT NULL,
-  `control` varchar(100) COLLATE utf8_polish_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8_polish_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8_polish_ci NOT NULL,
-  `p_info` varchar(200) COLLATE utf8_polish_ci NOT NULL,
-  `p_email` varchar(60) COLLATE utf8_polish_ci NOT NULL,
-  `channel` varchar(4) COLLATE utf8_polish_ci NOT NULL,
-  `signature` varchar(300) COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `control` varchar(100) COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_general_ci NOT NULL,
+  `p_info` varchar(200) COLLATE utf8_general_ci NOT NULL,
+  `p_email` varchar(60) COLLATE utf8_general_ci NOT NULL,
+  `channel` varchar(4) COLLATE utf8_general_ci NOT NULL,
+  `signature` varchar(300) COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -297,12 +297,12 @@ CREATE TABLE `payments` (
 
 CREATE TABLE `price_class` (
   `id` int(11) NOT NULL,
-  `name` varchar(3) COLLATE utf8_polish_ci NOT NULL,
+  `name` varchar(3) COLLATE utf8_general_ci NOT NULL,
   `five` int(11) NOT NULL,
   `ten` int(11) NOT NULL,
   `fifteen` int(11) NOT NULL,
   `bail` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `price_class`
@@ -323,7 +323,7 @@ INSERT INTO `price_class` (`id`, `name`, `five`, `ten`, `fifteen`, `bail`) VALUE
 
 CREATE TABLE `reservations` (
   `id` int(11) NOT NULL,
-  `reservation_nr` varchar(25) COLLATE utf8_polish_ci NOT NULL,
+  `reservation_nr` varchar(25) COLLATE utf8_general_ci NOT NULL,
   `company/person` tinyint(1) NOT NULL,
   `id_driver` int(11) NOT NULL,
   `id_car` int(11) NOT NULL,
@@ -333,8 +333,8 @@ CREATE TABLE `reservations` (
   `id_location_return` int(11) NOT NULL,
   `f_VAT` tinyint(4) NOT NULL,
   `price` double(10,2) NOT NULL,
-  `status` varchar(30) COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `status` varchar(30) COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Zrzut danych tabeli `reservations`
